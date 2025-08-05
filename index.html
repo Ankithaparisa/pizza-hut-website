@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Delight</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .menu-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    .pizza-card {
+      flex: 0 0 auto;
+      width: 250px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+   <nav class="navbar">
+  <div class="logo">PizzaHut</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#offers">Offers</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to PizzaHut</h1>
+      <p>Where Every Slice Tells a Story 🍕</p>
+      <a href="#menu" class="cta-button">Order Now</a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+<section id="menu" class="menu-section">
+  <h2>🍕 Our Delicious Menu</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filters">
+    <button onclick="filterPizzas('all')">All</button>
+    <button onclick="filterPizzas('veg')">Veg</button>
+    <button onclick="filterPizzas('non-veg')">Non-Veg</button>
+    <button onclick="filterPizzas('drinks')">Drinks</button>
+  </div>
+
+  <!-- Menu Grid -->
+  <div class="menu-grid" id="pizzaMenu">
+    <!-- Veg Pizza Cards -->
+    <div class="pizza-card" data-id="1" data-price="199" data-category="veg">
+      <img src="margherita.jpg" alt="Margherita" />
+      <h3>Margherita</h3>
+      <p>₹199</p>
+      <div class="rating">★★★★☆</div>
+      <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="pizza-card" data-id="2" data-price="249" data-category="veg">
+      <img src="farmhouse.jpg" alt="Farmhouse" />
+      <h3>Farmhouse</h3>
+      <p>₹249</p>
+      <div class="rating">★★★★★</div>
+      <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="pizza-card" data-id="5" data-price="269" data-category="veg">
+  <img src="paneer_makhani.jpg" alt="Paneer Makhani" />
+  <h3>Paneer Makhani</h3>
+  <p>₹269</p>
+  <div class="rating">★★★★☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="pizza-card" data-id="6" data-price="229" data-category="veg">
+  <img src="cheese_corn.jpg" alt="Cheese & Corn Delight" />
+  <h3>Cheese & Corn Delight</h3>
+  <p>₹229</p>
+  <div class="rating">★★★★☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+    <!-- Non-Veg Pizza Cards -->
+    <div class="pizza-card" data-id="3" data-price="319" data-category="non-veg">
+      <img src="chickengolden_delight.png" alt="Chicken Golden Delight" />
+      <h3>Chicken Golden Delight</h3>
+      <p>₹319</p>
+      <div class="rating">★★★★★</div>
+      <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="pizza-card" data-id="4" data-price="339" data-category="non-veg">
+      <img src="chicken_dominator.jpg" alt="Chicken Dominator" />
+      <h3>Chicken Dominator</h3>
+      <p>₹339</p>
+      <div class="rating">★★★★☆</div>
+      <div class="quantity-controls">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="pizza-card" data-id="7" data-price="299" data-category="non-veg">
+  <img src="pepper_bbq.jpg" alt="Pepper Barbecue Chicken" />
+  <h3>Pepper Barbecue Chicken</h3>
+  <p>₹299</p>
+  <div class="rating">★★★★★</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div class="pizza-card" data-id="8" data-price="319" data-category="non-veg">
+  <img src="peri_peri.jpg" alt="Peri Peri Chicken Pizza" />
+  <h3>Peri Peri Chicken Pizza</h3>
+  <p>₹319</p>
+  <div class="rating">★★★★☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+<!-- Cool Drink: Coca Cola -->
+<div class="pizza-card" data-id="9" data-price="49" data-category="drinks">
+  <img src="coca_cola.jpg" alt="Coca Cola" />
+  <h3>Coca Cola</h3>
+  <p>₹49</p>
+  <div class="rating">★★★☆☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<!-- Pepsi -->
+<div class="pizza-card" data-id="10" data-price="49" data-category="drinks">
+  <img src="pepsi.jpg" alt="Pepsi" />
+  <h3>Pepsi</h3>
+  <p>₹49</p>
+  <div class="rating">★★★☆☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<!-- Sprite -->
+<div class="pizza-card" data-id="11" data-price="45" data-category="drinks">
+  <img src="sprite.jpg" alt="Sprite" />
+  <h3>Sprite</h3>
+  <p>₹45</p>
+  <div class="rating">★★★☆☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+<!-- Fanta -->
+<div class="pizza-card" data-id="12" data-price="45" data-category="drinks">
+  <img src="fanta.jpg" alt="Fanta" />
+  <h3>Fanta</h3>
+  <p>₹45</p>
+  <div class="rating">★★★☆☆</div>
+  <div class="quantity-controls">
+    <button class="decrease">-</button>
+    <span class="count">0</span>
+    <button class="increase">+</button>
+  </div>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+
+
+  </div>
+</section>
+
+
+  <!-- Cart Section (Popup-style) -->
+  <div class="cart-popup" id="cartPopup">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <p>Total Items: <span id="total-items">0</span></p>
+    <p>Total Price: ₹<span id="total-price">0</span></p>
+    <button onclick="closeCart()">Close</button>
+  </div>
+
+  <!-- Offers Section -->
+  <section id="offers">
+  <h2>🔥 Latest Offers 🔥</h2>
+  <div class="offers-container">
+    <div class="offer-card">
+      <h3>🍕 Buy 1 Get 1 Free</h3>
+      <p>Available on all medium pizzas every Wednesday!</p>
+    </div>
+    <div class="offer-card">
+      <h3>💸 50% Off</h3>
+      <p>Flat 50% off on orders above ₹499 using code <strong>HUT50</strong></p>
+    </div>
+    <div class="offer-card">
+      <h3>🎓 Student Special</h3>
+      <p>Get a free drink with any personal pizza on showing student ID.</p>
+    </div>
+  </div>
+</section>
+
+
+  </section>
+
+  <!-- Contact Section -->
+   <section id="contact">
+  <h2>Contact Us</h2>
+
+  <!-- Contact Information -->
+  <div class="contact-info">
+    <p><strong>📍 Address:</strong> 123 Pizza Street, Hyderabad, Telangana, 500001</p>
+    <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+    <p><strong>📧 Email:</strong> support@pizzahut.in</p>
+  </div>
+
+  <!-- Contact Form -->
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+    <p id="formStatus"></p>
+  </form>
+</section>
+
+
+  <script>
+    const increaseBtns = document.querySelectorAll('.increase');
+    const decreaseBtns = document.querySelectorAll('.decrease');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+    const totalItemsEl = document.getElementById('total-items');
+    const totalPriceEl = document.getElementById('total-price');
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartPopup = document.getElementById('cartPopup');
+    const pizzaCards = document.querySelectorAll('.pizza-card');
+
+    let totalItems = 0;
+    let totalPrice = 0;
+    let cart = {};
+
+    function filterPizzas(category) {
+      pizzaCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    increaseBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.pizza-card');
+        const countEl = card.querySelector('.count');
+        let count = parseInt(countEl.textContent);
+        count++;
+        countEl.textContent = count;
+      });
+    });
+
+    decreaseBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.pizza-card');
+        const countEl = card.querySelector('.count');
+        let count = parseInt(countEl.textContent);
+        if (count > 0) {
+          count--;
+          countEl.textContent = count;
+        }
+      });
+    });
+
+    addToCartBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        cart = {}; // clear cart every time
+        totalItems = 0;
+        totalPrice = 0;
+        cartItemsEl.innerHTML = '';
+
+        pizzaCards.forEach(card => {
+          const id = card.getAttribute('data-id');
+          const name = card.querySelector('h3').textContent;
+          const price = parseInt(card.getAttribute('data-price'));
+          const count = parseInt(card.querySelector('.count').textContent);
+
+          if (count > 0) {
+            cart[id] = { name, count, price };
+            totalItems += count;
+            totalPrice += count * price;
+            card.querySelector('.count').textContent = 0;
+          }
+        });
+
+        updateCart();
+        cartPopup.style.display = 'block';
+      });
+    });
+
+    function updateCart() {
+      totalItemsEl.textContent = totalItems;
+      totalPriceEl.textContent = totalPrice;
+      cartItemsEl.innerHTML = '';
+
+      for (let id in cart) {
+        const li = document.createElement('li');
+        li.textContent = `${cart[id].name} x ${cart[id].count} = ₹${cart[id].count * cart[id].price}`;
+        cartItemsEl.appendChild(li);
+      }
+    }
+
+    function closeCart() {
+      cartPopup.style.display = 'none';
+    }
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent form from reloading page
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const status = document.getElementById('formStatus');
+
+    if (name && email && message) {
+      status.textContent = "Thanks for contacting us!";
+      this.reset(); // Clear the form
+    } else {
+      status.textContent = "Please fill in all fields.";
+      status.style.color = "red";
+    }
+  });
+  </script>
+</body>
+</html>
